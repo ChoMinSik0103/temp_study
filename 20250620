@@ -1,1 +1,25 @@
-오늘 배운 내용
+1. 디렉토리 vscode 파일 한꺼번에 열기 
+   파일탐색기에서 경로란에 cmd 명령어 후에 code. 입력하면 vscode 에서 해당 디렉토리의 모든 파일 열림
+
+2. visual stdio code 왼쪽바에 extension 에서 live server 검색후 설치 
+   live server 수행시 필요
+
+3. visual stdio code extension 에서 한글 팩 설치
+
+4. visual stdio code 에서 
+   !  or html:5  입력후 enter -> 기본 코드 형태 출력
+
+5. 태그 + tab  ex> h1 후 tab 치면  <h1></h1> 형태로 출력
+
+6. alt + shift +  ▼ (키보드 아래) 한 행 복사
+
+7. alt + L O (순서대로 누름) live server 실행
+
+8. ul>li*5 enter or tab key  아래 형태로 출력 
+   <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+   </ul>

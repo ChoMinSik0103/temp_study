@@ -105,7 +105,7 @@
 <body>
     <fieldset>
         <legend>필수 입력 사항</legend>
-        <label">ID</label><input type="text"> <button type="submit">중복확인</button><br>
+        <label>ID</label><input type="text"> <button type="submit">중복확인</button><br>
         <label>비밀번호</label><input type="password"><br>
         <label>비밀번호 확인</label><input type="password"><br>
         <label>Email</label><input type="email">

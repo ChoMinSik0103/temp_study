@@ -1,4 +1,6 @@
--- 1번 과제
+2025년 6월23일 과제
+
+1. 1번과제
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +13,9 @@
         <fieldset>
             <legend>납품자 정보</legend>
             <ol type="1">
-                <li><label>납품자명 : </label> <input type="text" autofocus></li><br>
-                <li><label>email : </label> <input type="email" placeholder="answer@naver.com"></li><br>
-                <li><label>홈페이지 : </label> <input type="url" value="https://"></li><br>
+                <li><label>납품자명 : </label> <input type="text" name="order-name" autofocus></li><br>
+                <li><label>email : </label> <input type="email" name="order-email" placeholder="answer@naver.com"></li><br>
+                <li><label>홈페이지 : </label> <input type="url" name="order-homepage" value="https://"></li><br>
                 <li><label>지역 : </label> 
                     <select name="area">
                         <option value="1">서울</option>
@@ -38,10 +40,10 @@
         <fieldset>
             <legend>납품 정보</legend>
             <ul>
-                <li><label>상품명 : </label> <input type="text"></li><br>
-                <li><label>납품수량 : </label> <input type="number" placeholder="최소 100" min="50" max="10000" step="10"></li><br>
-                <li><label>납품등급 : </label> <input type="range" min="0" max="5" value="0" step="1"></li><br>
-                <li><label>기타사항 : </label> <textarea style="resize:none;" cols="20" rows="5"></textarea></li>
+                <li><label>상품명 : </label> <input type="text" name="goods-name"></li><br>
+                <li><label>납품수량 : </label> <input type="number" name="amount" placeholder="최소 100" min="50" max="10000" step="10"></li><br>
+                <li><label>납품등급 : </label> <input type="range" name="amount-grade" min="0" max="5" value="0" step="1"></li><br>
+                <li><label>기타사항 : </label> <textarea style="resize:none;" name="etc-message" cols="20" rows="5"></textarea></li>
             </ul>
         </fieldset>
         <br>
@@ -50,8 +52,7 @@
 </body>
 </html>
 
-
--- 2번과제
+2. 2번과제
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,40 +62,45 @@
 </head>
 <body>
     <form action="#">
-        <label>고객명 : </label> <input type="text"><br><br>
-        <label>전화번호 : </label> <input type="phone"><br><br>
-        <label>E-mail : </label> <input type="email" placeholder="aaa@aaa.com"><br><br>
-        <label>피자선택 : </label> <input type="text" value="피자를 선택하세요">
+        <label>고객명 : </label> <input type="text" name="customer" maxlength="20" autofocus><br><br>
+        <label>전화번호 : </label> <input type="tel" name="phonenumber" maxlength="15"><br><br>
+        <label>E-mail : </label> <input type="email" name="emailaddress" placeholder="aaa@aaa.com"><br><br>
+        <label>피자선택 : </label> 
+        <select name="selectpizza">
+            <option value="original" selected>오리지널피자</option>
+            <option value="sweetpotato">고구마피자</option>
+            <option value="potato">포테이토피자</option>
+        </select>
 
-    <fieldset>
-        <legend>피자 사이즈</legend>
-        <input type="radio">Small<br>
-        <input type="radio">Medium<br>
-        <input type="radio">Large<br>
-    </fieldset>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" value="small" name="pizzasize" checked>Small<br>
+              <input type="radio" value="medium" name="pizzasize">Medium<br>
+            <input type="radio" value="large" name="pizzasize">Large<br>
+        </fieldset>
 
-    <fieldset>
-        <legend>토핑 선택</legend>
-        <input type="checkbox">베이컨<br>
-        <input type="checkbox">치즈<br>
-        <input type="checkbox">양파<br>
-        <input type="checkbox">버섯<br>
-    </fieldset>
-    <br>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" id="topping" value="bacon" name="topping">베이컨<br>
+            <input type="checkbox" id="topping" value="cheese" name="topping">치즈<br>
+            <input type="checkbox" id="topping" value="onion" name="topping">양파<br>
+            <input type="checkbox" id="topping" value="mushroom" name="topping">버섯<br>
+        </fieldset>
+        <br>
 
-    <label>희망배송시간 : </label> <input type="datetime-local"><br><br>
-    <form>
+        <label>희망배송시간 : </label> <input type="datetime-local" name="ordertime"><br><br>
+
         <label>배송시 요청사항 : 
-            <textarea style="resize: none;" cols="15" rows="5"></textarea>
+            <textarea style="resize: none;" cols="15" rows="5" name="etc-message"></textarea>
         </label>
-    </form>
-    <br>
-    <input type="submit" value="주문하기">
+
+        <br>
+        <input type="submit" value="주문하기">
     </form>
 </body>
 </html>
 
--- 3번과제
+3. 3번과제
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,42 +109,46 @@
     <title>3번과제</title>
 </head>
 <body>
-    <fieldset>
-        <legend>필수 입력 사항</legend>
-        <label>ID : </label><input type="text"> <button type="submit">중복확인</button><br>
-        <label>비밀번호 : </label><input type="password"><br>
-        <label>비밀번호 확인 : </label><input type="password"><br>
-        <label>Email : </label><input type="email">
-        <select name="" id="" >
-            <option value="etc" selected>직접입력</option>
-        </select>
-    </fieldset>
+    <form action="#">
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <label>ID : </label><input type="text" name="id"> <button type="button" onclick="checkId()">중복확인</button><br>
+            <label>비밀번호 : </label><input type="password" name="passwd"><br>
+            <label>비밀번호 확인 : </label><input type="password"><br>
+            <label>Email : </label><input type="email" name="email">
+            <select name="" id="" >
+                <option value="etc" selected>직접입력</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>추가 정보</legend>
-        <label>프로필 사진 : </label><input type="file" name="uploadfile"><br><br>
-        <label>성별 : </label><input type="radio" value="M" name="gender" id="male">
-        <label for="male">남자</label>
-        <input type="radio" value="F" name="gender" id="fmale">
-        <label for="fmale">여자</label><br><br>
-        <label>생년월일</label> <input type="date"><br><br>
-        <label>취미</label><br>
-        <input type="checkbox" id="baseball" value="야구" name="hobby">
-        <label for="baseball">야구</label>
-        <input type="checkbox" id="basketball" value="농구" name="hobby">
-        <label for="baseball">농구</label>
-        <input type="checkbox" id="soccer" value="축구" name="hobby">
-        <label for="baseball">축구</label><br>
-        <input type="checkbox" id="study" value="공부" name="hobby">
-        <label for="study">공부</label>
-        <input type="checkbox" id="music" value="음악감상" name="hobby">
-        <label for="study">음악감상</label><br>
-        <input type="checkbox" id="etc" value="기타" name="hobby">
-        <label for="study">기타 </label><input type="text"><br><br>
-        <label for="">자기소개</label><br>
-        <textarea style="resize:none;" cols="50" rows="10"></textarea>
-        <br> 
-    </fieldset>
-
+        <fieldset>
+            <legend>추가 정보</legend>
+            <label>프로필 사진 : </label><input type="file" name="uploadfile"><br><br>
+            <label>성별 : </label><input type="radio" value="M" name="gender" id="male">
+            <label for="male">남자</label>
+            <input type="radio" value="F" name="gender" id="fmale">
+            <label for="fmale">여자</label><br><br>
+            <label>생년월일</label> <input type="date"><br><br>
+            <label>취미</label><br>
+            <input type="checkbox" id="baseball" value="야구" name="hobby">
+            <label for="baseball">야구</label>
+            <input type="checkbox" id="basketball" value="농구" name="hobby">
+            <label for="baseball">농구</label>
+            <input type="checkbox" id="soccer" value="축구" name="hobby">
+            <label for="baseball">축구</label><br>
+            <input type="checkbox" id="study" value="공부" name="hobby">
+            <label for="study">공부</label>
+            <input type="checkbox" id="music" value="음악감상" name="hobby">
+            <label for="study">음악감상</label><br>
+            <input type="checkbox" id="etc" value="기타" name="hobby">
+            <label for="study">기타 </label><input type="text"><br><br>
+            <label for="">자기소개</label><br>
+            <textarea style="resize:none;" name="etc" cols="50" rows="10"></textarea>
+            <br> 
+        </fieldset>
+        <input type="submit" value="회원가입">
+        <input type="reset" value="초기화">
+        <button type="button" onclick="history.back()">이전으로</button>
+    </form>
 </body>
 </html>

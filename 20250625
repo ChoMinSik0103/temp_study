@@ -1,0 +1,225 @@
+--> 2025년 6월 25일 과제
+
+1. 1번 과제 (display: inline-block; 와 float: left; 차이 명확히 이해 필요)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B_과제</title>
+
+    <style>
+        body {
+            width: 500px;
+            height: 350px;
+        }
+
+        #header1 {
+            width : 400px;
+            height: 50px;
+            background-color : blue;
+        }
+
+        .block {
+            height: 250px;
+            /* display: inline-block; */
+
+            float: left;
+        }
+
+        .nav1 {
+            width: 75px;
+            background-color: red;
+        }
+
+        .section1 {
+            width:  250px;
+            background-color: green;
+        }
+        
+        .aside1 {
+            width:  75px;
+            background-color: rgb(236, 227, 203);
+        }
+
+        #article1 {
+            width:  150px;
+            height: 50px;
+            background-color: rgb(233, 98, 177);
+
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        #article2 {
+            width:  150px;
+            height: 50px;
+
+            background-color: rgb(64, 61, 216);
+
+            margin-left: 10px;
+        }
+
+        #article3 {
+            width:  150px;
+            height: 50px;
+            background-color: rgb(215, 218, 59);
+
+            margin-left: 10px;  
+        }
+
+        #footer1 {
+            width:  400px;
+            height: 50px;
+            background-color: violet;
+
+            margin-top: 250px;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header1">
+        header
+    </header>
+
+    <nav class="block nav1">
+        nav
+    </nav>
+
+    <section class="block section1">
+        section
+        <article id="article1">
+            article1
+        </article> 
+        <article id="article2">
+            article2
+        </article> 
+        <article id="article3">
+            article3
+        </article> 
+    </section>
+
+    <aside class="block aside1">
+        aside
+    </aside>
+    <footer id="footer1">
+        footer
+    </footer>
+</body>
+</html>
+
+
+2. 2번 과제
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B_과제</title>
+
+    <style>
+        body {
+            width: 500px;
+            height: 350px;
+        }
+
+        #header1 {
+            width : 400px;
+            height: 50px;
+            background-color : blue;
+        }
+
+        .block {
+            height: 250px;
+            /* display: inline-block; */
+
+            float: left;
+        }
+
+        .nav1 {
+            width: 75px;
+            background-color: red;
+        }
+
+        .section1 {
+            width:  250px;
+            background-color: green;
+        }
+        
+        .aside1 {
+            width:  75px;
+            background-color: rgb(236, 227, 203);
+        }
+
+        #article1 {
+            width:  150px;
+            height: 50px;
+            background-color: rgb(233, 98, 177);
+
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        #article2 {
+            width:  150px;
+            height: 50px;
+
+            background-color: rgb(64, 61, 216);
+
+            margin-left: 10px;
+        }
+
+        #article3 {
+            width:  150px;
+            height: 50px;
+            background-color: rgb(215, 218, 59);
+
+            margin-left: 10px;
+            
+        }
+
+        #footer1 {
+            width:  400px;
+            height: 50px;
+            background-color: violet;
+
+            margin-top: 250px;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header1">
+        header
+    </header>
+
+    <nav class="block nav1">
+        nav
+    </nav>
+
+    <section class="block section1">
+        section
+        <article id="article1">
+            article1
+        </article> 
+        <article id="article2">
+            article2
+        </article> 
+        <article id="article3">
+            article3
+        </article> 
+    </section>
+
+    <aside class="block aside1">
+        aside
+    </aside>
+
+
+
+
+    <footer id="footer1">
+        footer
+    </footer>
+</body>
+</html>

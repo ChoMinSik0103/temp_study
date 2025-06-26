@@ -46,7 +46,7 @@ car 이라는 객체로 myCar 이라는 새로운 객체 생성 myCar.color = "b
 
 2. class 기반에서 인스턴스 / 프로토타입 기반 객체의 용어 차이 
 
-
+3. 프로토타입 체인(prototype chain)
 
 
 

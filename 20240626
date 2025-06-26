@@ -24,7 +24,7 @@ yourCar.drive(); // blue 자동차가 운전 중
 class Car 라는 설계도 작성후 new 로 myCar, yourCar 이라는 인스턴스 생성해서 사용
 new 로 인스턴스 생성시 color 은 constructor 로 초기화해서 사용
 
-클래스 기반은 constructor 로 인해 color 값이 꼭 초기화 되어야 되므로 프로토타입 기반에 비해 상대적으로 안정적으로 판단됨.
+클래스 기반은 constructor 로 인해 color 값이 꼭 초기화 되어야 되므로 프로토타입 기반에 비해 상대적으로 안정적이라 판단됨.
 
 
 >> 프로토타입 기반 

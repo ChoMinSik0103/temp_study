@@ -47,6 +47,29 @@ car 이라는 객체로 myCar 이라는 새로운 객체 생성 myCar.color = "b
 2. class 기반에서 인스턴스 / 프로토타입 기반 객체의 용어 차이 
 
 3. 프로토타입 체인(prototype chain)
+  자바스크립트는 객체에서 속성이나 메서드를 찾을 때 없으면 부모 객체(프로토타입)을 계속 따로 올라가는 구조임
+  부모-자식 객체들이 줄줄이 연결된 구조를 프로토타입 체인이라 함. 
+
+>> 예시
+const grandParent = {
+  greet() { console.log("안녕, 나는 조상!"); }
+};
+
+const parent = Object.create(grandParent);
+parent.sayHi = function() {
+  console.log("안녕, 나는 부모!");
+};
+
+const child = Object.create(parent);
+child.name = "자식";
+
+console.log(child.name);    // "자식" → 자기 자신에서 찾음
+child.sayHi();              // "안녕, 나는 부모!" → 부모(parent)에서 찾음
+child.greet();              // "안녕, 나는 조상!" → 조상(grandParent)에서 찾음
+
+메모리 절약의 효과는 있고 상위의 객체나 메서드를 찾을 때 탐색시간의 불이익은 있음.
+최악의 경우 O(n) 탐색  --> 프로토타입 캐싱, JIT 컴파일을 통해 최적화
+
 
 
 

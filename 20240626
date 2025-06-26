@@ -1,3 +1,50 @@
 1. 클래스 기반 객제지향 언어(java, c++) / 프로토타입 기반 객체지향 언어(javascript)  차이
---클래스 기반 객체지향 은 설계도 class 기반으로 객체를 생성 
---프로토타입 기반 객체지향은 기본 객체를 기반으로 새로운 객체 생성
+  --클래스 기반 객체지향 은 설계도 class 기반으로 객체를 생성 
+  --프로토타입 기반 객체지향은 기본 객체를 기반으로 새로운 객체 생성
+
+ex >
+
+>> 클래스 기반 
+class Car {
+  constructor(color) {
+    this.color = color;          // 인스턴스 고유 속성
+  }
+
+  drive() {
+    console.log(this.color + " 자동차가 운전 중");
+  }
+}
+
+const myCar = new Car("red");
+const yourCar = new Car("blue");
+
+myCar.drive();   // red 자동차가 운전 중
+yourCar.drive(); // blue 자동차가 운전 중
+
+class Car 라는 설계도 작성후 new 로 myCar, yourCar 이라는 인스턴스 생성해서 사용
+new 로 인스턴스 생성시 color 은 constructor 로 초기화해서 사용
+
+
+>> 프로토타입 기반 
+const car = {
+  color: "red",
+  drive() {
+    console.log(this.color + " 자동차가 운전 중");
+  }
+};
+
+const myCar = Object.create(car);
+myCar.color = "blue";
+
+myCar.drive();  // blue 자동차가 운전 중
+
+car 라는 부모 객체 생성후 그 객체를 기반으로 myCar 이라는 새로운 객체 생성하여 사용
+car 이라는 객체로 myCar 이라는 새로운 객체 생성 myCar.color = "blue" 미 지정시 car 객체의 color = "red" 를 따라감.
+
+
+2. class 기반에서 인스턴스 / 프로토타입 기반 객체의 용어 차이 
+
+
+
+
+

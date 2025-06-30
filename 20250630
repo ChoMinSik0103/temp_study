@@ -32,3 +32,19 @@
   // 생성자 함수는 아래와 같이 prototype 라는 함수로 상속한다. 
   Student.prototype = user;
 
+
+3. __proto__ 이런 형태는 요즘 잘 사용하지 않고 아래와 같이 setPrototypeOf, getPrototypeOf 의 형태로 사용한다. 
+  const animal = {
+    eats: true
+  };
+
+  const rabbit = {
+    jumps: true
+  };
+
+  Object.setPrototypeOf(rabbit, animal); // rabbit의 부모 설정
+  console.log(Object.getPrototypeOf(rabbit)); // 현재 rabbit의 부모 확인
+
+
+
+

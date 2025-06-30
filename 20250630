@@ -46,7 +46,7 @@
   console.log(Object.getPrototypeOf(rabbit)); // 현재 rabbit의 부모 확인
 
 4. 함수에서 객체 상속시 첫번째 방법이 맞으나 2번째 방법도 컴파일 오류가 발생하진 않는다.  
-   참조와 같은 구문을 따로 넣어 줘야 하나?
+   참조와 같은 구문을 따로 넣어 줘야 함. 객체마다 설정을 해야 함. 
   Student.prototype = user;
   //Student.__proto__ = user;
 

@@ -45,6 +45,17 @@
   Object.setPrototypeOf(rabbit, animal); // rabbit의 부모 설정
   console.log(Object.getPrototypeOf(rabbit)); // 현재 rabbit의 부모 확인
 
+4. 함수에서 객체 상속시 첫번째 방법이 맞으나 2번째 방법도 컴파일 오류가 발생하진 않는다.  
+   참조와 같은 구문을 따로 넣어 줘야 하나?
+  Student.prototype = user;
+  //Student.__proto__ = user;
 
+  cf > 참조 
+  'use strict';
+  // Student.__proto__를 writable: false로 설정하여 변경 불가능하게 만듦
+  Object.defineProperty(Student, '__proto__', {
+    writable: false,
+    configurable: false
+  });
 
 

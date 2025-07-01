@@ -136,3 +136,6 @@ for(let prop in fireCar) {
 
 
 
+querySelectorAll / querySelector  정확한 용도
+ 
+

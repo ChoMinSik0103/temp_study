@@ -1,0 +1,138 @@
+-- 2025년 07월 01일 과제
+
+console.log('====================== 1번과제 =====================');
+/* 1번 과제
+사용자가 입력한 숫자가 홀수인지 짝수인지 판별하는 함수를 작성하세요.
+
+(if - else 문 이용하기)
+*/
+const InputNum = 10;
+
+if (InputNum % 2 === 0) console.log(`${InputNum} 은 짝수입니다.`);
+else console.log(`${InputNum} 은 홀수입니다.`);
+
+
+console.log('====================== 2번과제 =====================');
+/* 2번 과제
+   아래의 객체를 for in 반복문을 사용하여, 객체의 모든 키와 그에 해당하는 값을 출력하는 코드를 작성하세요.
+    var person = {
+        firstName: 'GilDong',
+        lastName: 'Hong',
+        age: 20
+    };
+*/
+var person = {
+    firstName: 'GilDong',
+    lastName: 'Hong',
+    age: 20
+};
+
+for(var key in person) {
+    console.log(`key : ${key} | value : ${person[key]}`);
+}
+
+console.log('====================== 3번과제 =====================');
+/* 3번 과제
+   두 개의 숫자를 매개변수로 받아서 그 합을 반환하는 함수를 작성하세요. 
+*/ 
+function AddSum(inputnum1, inputnum2) {
+    return console.log(`${inputnum1} 과 ${inputnum2} 의 합은 ${inputnum1 + inputnum2} 입니다.`);
+}
+
+AddSum(10, 20);
+
+console.log('====================== 41번과제 =====================');
+/* 4번 과제
+    아래의 함수들을 화살표 함수로 변환해보세요.
+
+    function greet() {
+        return "Hello!";
+    }
+
+    function getInfo(name, age) {
+        return `name: ${name}, age: ${age}`;
+    }
+*/
+greet = () => 'Hello!';
+console.log(greet());
+
+getInfo = (name, age) => `name: ${name}, age: ${age}`;
+console.log(getInfo('조해인', 14));
+
+console.log('====================== 5번과제 =====================');
+/* 5번 과제
+    아래의 코드를 실행했을 때 출력결과가 나오도록 Person 생성자 함수를 정의하세요.
+
+    const person = new Person("홍길동", 20);
+    person.sayHello();
+
+    ------- 출력 결과 --------
+    안녕하세요, 제 이름은 홍길동 이고 나이는 20세입니다.
+*/
+function Person1(name, age) {
+    this.name = name;
+    this.age = age;
+
+    this.sayHello = function() {
+        console.log(`안녕하세요, 제 이름은 ${this.name}이고 나이는 ${this.age}세입니다.`)
+    }
+}
+
+const person1 = new Person1("홍길동", 20);
+person1.sayHello();
+
+console.log('====================== 6번과제 =====================');
+/* 6번 과제
+(1) user 객체에 email 프로퍼티를 추가하고 "koala.ohgiraffers@gmail.com" 값을 넣으세요.
+(2) age 값을 21로 수정하세요.
+(3) name 값을 삭제하세요.
+
+const user = {
+   name : "koala",
+   age : 20
+};
+```
+*/
+
+const user = {
+    name : "koala",
+    age : 20
+}
+
+user.email = "koala.ohgiraffers@gmail.com";
+console.log(user);
+user.age = 21;
+console.log(user);
+
+delete user.name;
+console.log(user);
+
+console.log('====================== 7번과제 =====================');
+/* 7번 과제
+    car 객체와 fireCar 객체 정의하기
+    -------------------------------------------------------------------------------
+    - car 객체는 brand 프로퍼티를 갖고있다.
+    - fireCar 객체는 brand, color 프로퍼티를 갖고 있고 car객체를 상속받는다.
+    - fireCar 객체에서 brand는 상속받은 프로퍼티이고, color는 자기 자신의 프로퍼티이다.
+    -------------------------------------------------------------------------------
+    위의 예제에서 자기 자신의 프로퍼티와 상속된 프로퍼티를 구분하세요.
+*/
+
+const car = {
+    brand : "현대"
+} 
+
+const fireCar  = {
+    color : "red",
+    __proto__ : car
+}
+
+for(let prop in fireCar) {   
+    let isOwn = fireCar.hasOwnProperty(prop);
+
+    if(isOwn) console.log(`${prop} : 객체 자신의 프로퍼티`);
+    else console.log(`${prop} : 상속 프로퍼티`);
+}
+
+
+

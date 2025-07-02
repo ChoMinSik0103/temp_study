@@ -1,0 +1,158 @@
+2025년 7월 2일 과제
+
+<!-- 위 HTML 문서를 이용하여 다음에 문제를 풀어보세요.
+
+(요소를 조작하는 방법은 무엇을 사용해도 좋습니다.)
+
+1. 커피 앞에 ‘콜라’를 삽입하세요
+2. 커피 뒤에 ‘사이다’를 삽입하세요
+3. 만들어진 ‘사이다’를 ‘커피’와 ‘콜라’ 사이로 이동하세요
+4. ‘사이다’를 ‘제로콜라’로 변경하세요
+5. 중간에 위치한 ‘제로콜라’를 삭제하세요
+6. forEach 문을 사용하여 ‘밀키스’, ‘아이스크림’, ‘허브티’를 ‘콜라’ 뒤에 삽입하세요 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.다른과제</title>
+</head>
+<body>
+    <ul id="drink">
+        <li>커피</li>
+    </ul>
+
+    <script>
+        const $drink = document.getElementById('drink');
+        const $coffee = $drink.firstElementChild;
+      
+        const $li1 = document.createElement('li');
+        console.log($coffee);
+
+        // 1. 커피 앞에 ‘콜라’를 삽입하세요
+        $li1.textContent = '콜라';
+        $drink.insertBefore($li1, $drink.lastElementChild);
+
+        //2. 커피 뒤에 ‘사이다’를 삽입하세요
+        const $li2 = document.createElement('li');
+        $li2.textContent = '사이다';
+        $drink.insertBefore($li2, $coffee.lastElementChild);
+
+        //3. 만들어진 ‘사이다’를 ‘커피’와 ‘콜라’ 사이로 이동하세요
+        $drink.insertBefore($li2, $coffee);
+
+        //4. ‘사이다’를 ‘제로콜라’로 변경하세요
+        $li2.textContent = '제로콜라'
+
+        //5. 중간에 위치한 ‘제로콜라’를 삭제하세요
+        $drink.removeChild($li1);
+
+        //6. forEach 문을 사용하여 ‘밀키스’, ‘아이스크림’, ‘허브티’를 ‘콜라’ 뒤에 삽입하세요
+        ['밀키스', '아이스크림', '허브티'].forEach(inputDrink => {
+            const $Loopli = document.createElement('li');
+            $Loopli.textContent = inputDrink;
+
+            $drink.append($Loopli);
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- 
+아래와 같이 변경
+1. 로제
+2. 까르보나라
+3. 필라프
+4. 리조또 
+
+순서 
+1. 토마토 삭제
+2. 로제 추가(첫번째)
+3. 리조또 추가(마지막번째)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.다른과제</title>
+</head>
+<body>
+    <ol id="menu">
+        <li>토마토</li>
+        <li>까르보나라</li>
+        <li>필라프</li>
+    </ol>
+
+    <script>
+        const $menu = document.getElementById('menu');
+
+        $menu.removeChild($menu.firstElementChild);
+
+        const $InputLi_1 = document.createElement('li');
+        $InputLi_1.textContent = '로제';
+        $menu.insertBefore($InputLi_1, $menu.firstElementChild);
+
+        const $InputLi_2 = document.createElement('li');
+        $InputLi_2.textContent = '리조또';
+        $menu.insertBefore($InputLi_2, null);
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+강아지
+고양이
+원숭이 
+
+1. 아래와 같이 출력
+강아지
+고양이
+호랑이
+원숭이 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. 다른과제</title>
+</head>
+<body>
+    <pre>아래 리스트에서 script에 코드를 입력해,
+        호랑이를 고양이와 원숭이 사이에 추가하여 
+        웹페이지에 출력 해주세요.</pre>
+    <ul id="animal">
+        <li>강아지</li>
+        <li>고양이</li>
+        <li>원숭이</li>
+    </ul>
+
+    <script> 
+        const $animal = document.getElementById('animal');
+
+        const $InputLi = document.createElement('li');
+        $InputLi.textContent = '호랑이';
+
+//console.log($InputLi.textContent);
+
+         $animal.insertBefore($InputLi, $animal.lastElementChild);
+    </script>
+</body>
+</html>
+
+
+
+4번째 문제 작성중 작성완료후 업데이트 예정
+
+
+
+
+

@@ -1,0 +1,101 @@
+-- 2025년 7월 3일 과제
+// 이벤트 캐쳐링 관련해서 미 적용
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025년 7월 3일 과제</title>
+
+    <style>
+        .tab-action {
+            background-color: skyblue;
+            border: 3px dotted black;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>사용자 입력 양식 이벤트 연습하기</h1>
+    <form name="memberjoin">
+        <label for="username">이름</label>
+        <br>
+        <input type="text" name="username" id="username" required placeholder="이름을 입력하세요." style="width: 50%;">
+
+        <br><br>
+
+        <label for="email">이메일</label>
+        <br>
+        <input type="email" name="email" id="email" required placeholder="example@admin.com" style="width: 50%;">
+
+        <br><br>
+
+        <label>성별</label>
+        <input type="radio" name="gender" id="male" value="m">
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="f">
+        <label for="female">여자</label>
+
+        <br><br>
+
+        <label>참여 일자 선택</label>
+        <br>
+        <select name="selectdate" id="selectdate" required style="width: 50%;">
+            <option value="default" selected>-날짜 선택-</option>
+            <option value="7-05">7월5일</option>
+            <option value="7-12">7월12일</option>
+            <option value="7-19">7월19일</option>
+            <option value="7-26">7월26일</option>
+        </select>
+
+        <br><br>
+
+        <label>요청사항</label>
+        <br>
+        <textarea name="require" id="require" rows="5"  
+        style="resize: none; width: 50%;" ></textarea>
+        <span>0</span>/500자
+
+        <br><br>
+
+        <input type="checkbox" name="check" id="name" required>
+        <label>개인정보 수집에 동의합니다.</label>
+
+        <br><br>
+
+        <input type="submit"> 신청하기
+    </form>
+
+    <script>
+        const $form = document.forms.memberjoin;
+        const $username = $form.username;
+
+        $username.addEventListener('focus', (e) => {
+            e.target.classList.toggle('tab-action');
+        });
+
+        $username.addEventListener('focus', (e) => {
+            e.target.maxLength = 15;
+        });
+
+        const $select = $form.selectdate;
+//console.log($select);
+
+        const $require = $form.require;
+
+        $require.addEventListener('input', (e) => {
+            let len = e.target.value.trim().length;
+
+            if(len > 500)  alert("요청사항 입력범위가 벗어났습니다. ")
+
+            $form.querySelector('span').textContent = len;
+        })
+
+        $form.addEventListener('submit', (e) => {
+            if($select.value === 'default') alert('날짜를 선택하세요.');
+        });
+    </script>
+</body>
+</html>

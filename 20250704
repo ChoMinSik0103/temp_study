@@ -57,6 +57,41 @@
 </html>
 
 
+3번 과제 :  버튼을 클릭하면, 첫번째 체크박스의 항목을 체크해 주세요.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="chk1">
+    <label for="chk1">Java</label>
+    <br>
+
+    <input type="checkbox" id="chk2">
+    <label for="chk2">DataBase</label>
+    <br>
+
+    <input type="checkbox" id="chk3">
+    <label for="chk3">Web</label>
+
+    <br>
+    <button id="btn">클릭</button>
+
+    <script>
+        const $btn = document.getElementById("btn");
+
+        $btn.addEventListener('click', function() {
+            const $chk1 = document.getElementById('chk1');
+            $chk1.checked = true;
+            
+        });
+    </script>
+</body>
+</html>
+
 
 
 

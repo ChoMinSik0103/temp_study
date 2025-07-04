@@ -27,4 +27,36 @@
 </html>
 
 
+-- 2번 과제 : 라디오버튼을 클릭하면 value 값을 이용해 해당 사이트로 이동해 주세요
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="site" id="radio-naver">
+    <label for="radio-naver">네이버</label>
+    <br>
+
+    <input type="radio" name="site" id="radio-google">
+    <label for="radio-google">구글</label>
+    <br>
+
+    <input type="radio" name="site" id="radio-w3schools">
+    <label for="radio-w3schools">w3schools</label>
+
+    <script>
+        // 라디오 클릭 시 각 사이트로 이동
+        document.getElementById('radio-naver').onclick = () => location.assign("https://www.naver.com");
+        document.getElementById('radio-google').onclick = () => location.assign("https://www.google.com");
+        document.getElementById('radio-w3schools').onclick = () => location.assign("https://www.w3schools.com");
+    </script>
+</body>
+</html>
+
+
+
+
 
